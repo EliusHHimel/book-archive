@@ -1,4 +1,4 @@
-// Search Button Click Handler
+// Search Button Click Handler to get results
 
 const getSearchResults = () => {
 
@@ -11,7 +11,7 @@ const getSearchResults = () => {
         .then(Response => Response.json())
         .then(data => displayBook(data))
 }
-
+// Toggle Spinner and clear previous reslts on toggle spin
 const toggleSpinner = (displayStyle, resultDisplayStyle) => {
     document.getElementById('spinner').style.display = displayStyle;
     document.getElementById('result-container').style.display = resultDisplayStyle;
@@ -23,7 +23,6 @@ const displayBook = books => {
     resultContainer.textContent = ''; //clear the previous results
 
     const booksInformation = books.docs;
-    console.log(books) //temporary console view
 
     // Total Found Results
     const totalCount = document.createElement('h4');
@@ -34,7 +33,6 @@ const displayBook = books => {
     booksInformation.forEach(book => {
         const column = document.createElement('div');
         column.classList.add('col-3', 'g-4', 'd-flex', 'justify-content-center')
-        // console.log(book.title)
         column.innerHTML = `
             <div class='card' style="width: 18rem;">
             <img src="${book.cover_i ? 'https://covers.openlibrary.org/b/id/' + book.cover_i + '-M.jpg' : 'https://www.forewordreviews.com/books/covers/networking-for-people-who-hate-networking.jpg'}" class="card-img-top" alt="">
