@@ -42,7 +42,7 @@ const displayBook = books => {
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">Author: ${book.author_name ? book.author_name[0] : 'Author name not found'}</li >
                 <li class="list-group-item">First Published: ${book.first_publish_year ? book.first_publish_year : 'First publish year not found'}</li >
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">Publisher: ${book.publisher ? book.publisher[0] : 'Publisher not found'}</li>
             </ul>
             </div>
             `;
