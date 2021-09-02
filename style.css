@@ -2,3 +2,8 @@
     background-color: #353535;
     color: white;
 }
+
+#spinner {
+    display: none;
+    text-align: center;
+}
