@@ -29,6 +29,16 @@ const displayBook = books => {
     totalCount.innerText = `Total Books found: ${booksInformation.length}`;
     resultContainer.appendChild(totalCount);
 
+    // check and show if no book found
+    if (booksInformation.length === 0) {
+        toggleSpinner('none', 'flex');
+        totalCount.style.display = 'none'
+        const notFoundMessage = document.createElement('h4');
+        notFoundMessage.classList.add('text-danger', 'text-center', 'mt-4')
+        notFoundMessage.innerText = 'No books found for this keyword';
+        resultContainer.appendChild(notFoundMessage);
+    }
+
     // Show books information
     booksInformation.forEach(book => {
         const column = document.createElement('div');
